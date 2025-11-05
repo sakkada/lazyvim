@@ -2,7 +2,7 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-if vim.tbl_contains(LazyVim.config.json.data.extras, "plugins.extras.self.reset") then
+if vim.tbl_contains(LazyVim.config.json.data.extras, "plugins.extras.sakkada.reset") then
   local map = LazyVim.safe_keymap_set
   --
   -- better up/down
