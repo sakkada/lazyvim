@@ -22,5 +22,8 @@ if vim.tbl_contains(LazyVim.config.json.data.extras, "plugins.extras.sakkada.res
   vim.keymap.del({ "n", "t" }, "<c-_>")
   vim.keymap.del({ "n", "t" }, "<c-/>")
 
+  vim.keymap.del("x", ">")
+  vim.keymap.del("x", "<")
+
   map("t", ";j", "<c-\\><c-n>", { noremap = true })
 end
