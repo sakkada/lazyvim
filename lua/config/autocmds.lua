@@ -6,3 +6,18 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+local function augroup(name)
+  return vim.api.nvim_create_augroup("sakkada_" .. name, { clear = true })
+end
+
+if vim.tbl_contains(LazyVim.config.json.data.extras, "plugins.extras.sakkada.reset") then
+  -- Disable autoformatting for certain types
+  vim.api.nvim_create_autocmd("FileType", {
+    group = augroup("disable_autoformat"),
+    pattern = { "markdown", "yaml", "toml", "python" },
+    callback = function()
+      vim.b.autoformat = false
+    end,
+  })
+end
