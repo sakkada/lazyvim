@@ -71,15 +71,29 @@ return {
           },
         },
       },
+      picker = {
+        sources = {
+          files = { hidden = true, ignored = true },
+          grep = { hidden = true, ignored = true },
+          smart = { hidden = true, ignored = true },
+          explorer = { hidden = true, ignored = true },
+        },
+      },
     },
     -- stylua: ignore
     keys = {
       { "<leader>/", false },  -- disable grep (root dir)
+      { "<c-/><c-/>", function() Snacks.terminal.toggle(nil, { win = { height = 0.5 } }) end, desc = "Toggle terminal", mode = { "n", "t" } },
       { "<c-_><c-_>", function() Snacks.terminal.toggle(nil, { win = { height = 0.5 } }) end, desc = "Toggle terminal", mode = { "n", "t" } },
+      { "<c-/><c-a>", function() Snacks.terminal.toggle_all(nil, { win = { height = 0.5 } }) end, desc = "Toggle all terminals", mode = { "n", "t" } },
       { "<c-_><c-a>", function() Snacks.terminal.toggle_all(nil, { win = { height = 0.5 } }) end, desc = "Toggle all terminals", mode = { "n", "t" } },
+      { "<c-/>1", "1<cmd>lua Snacks.terminal.toggle(nil, { win = { height = 0.5 } })<cr>", desc = "Toggle terminal 1" },
       { "<c-_>1", "1<cmd>lua Snacks.terminal.toggle(nil, { win = { height = 0.5 } })<cr>", desc = "Toggle terminal 1" },
+      { "<c-/>2", "2<cmd>lua Snacks.terminal.toggle(nil, { win = { height = 0.5 } })<cr>", desc = "Toggle terminal 2" },
       { "<c-_>2", "2<cmd>lua Snacks.terminal.toggle(nil, { win = { height = 0.5 } })<cr>", desc = "Toggle terminal 2" },
+      { "<c-/>3", "3<cmd>lua Snacks.terminal.toggle(nil, { win = { height = 0.5 } })<cr>", desc = "Toggle terminal 3" },
       { "<c-_>3", "3<cmd>lua Snacks.terminal.toggle(nil, { win = { height = 0.5 } })<cr>", desc = "Toggle terminal 3" },
+      { "<c-/>4", "4<cmd>lua Snacks.terminal.toggle(nil, { win = { height = 0.5 } })<cr>", desc = "Toggle terminal 4" },
       { "<c-_>4", "4<cmd>lua Snacks.terminal.toggle(nil, { win = { height = 0.5 } })<cr>", desc = "Toggle terminal 4" },
     },
   },
