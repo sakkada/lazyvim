@@ -4,7 +4,7 @@
 
 if vim.tbl_contains(LazyVim.config.json.data.extras, "plugins.extras.sakkada.reset") then
   local map = LazyVim.safe_keymap_set
-  --
+
   -- better up/down
   vim.keymap.del("n", "j")
   vim.keymap.del("n", "<Down>")
@@ -24,6 +24,8 @@ if vim.tbl_contains(LazyVim.config.json.data.extras, "plugins.extras.sakkada.res
 
   vim.keymap.del("x", ">")
   vim.keymap.del("x", "<")
+
+  vim.keymap.del("n", "<Space><Space>")
 
   map("t", ";j", "<c-\\><c-n>", { noremap = true })
 end
